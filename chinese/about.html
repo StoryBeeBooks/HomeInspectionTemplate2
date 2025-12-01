@@ -8,26 +8,40 @@
     
     <title>关于我们 | TO Inspect Ltd.</title>
     
-    <!-- Fonts - Elegant Typography -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style-modern.css">
     
-    <!-- About Page Styles - Elegant Monochromatic -->
+    <!-- About Page Specific Styles -->
     <style>
-        /* About Hero - Light Cream Background (matching Services page) */
+        /* Adjust fonts for Chinese characters */
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li, div {
+            font-family: 'Inter', 'Noto Serif SC', sans-serif;
+        }
+        
+        .about-hero__title, .section-header h2, .bio-content h2, .philosophy-header h2, .knowledge-header h2, .article-modal__title, .about-cta h2 {
+            font-family: 'Poppins', 'Noto Serif SC', sans-serif;
+        }
+
+        /* Spacing & Typography Overrides */
+        body {
+            line-height: 1.8;
+        }
+
+        /* About Hero */
         .about-hero {
-            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
+            background: linear-gradient(135deg, var(--color-bg-light) 0%, white 100%);
             min-height: 350px;
             display: flex;
             align-items: center;
-            padding: var(--space-3xl) 0;
+            padding: 8rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -45,15 +59,15 @@
         
         .about-hero__content {
             text-align: center;
-            color: var(--color-charcoal);
+            color: var(--color-text-main);
             position: relative;
             z-index: 1;
         }
         
         .about-hero__eyebrow {
             font-family: var(--font-body);
-            font-size: 0.75rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 600;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--color-primary);
@@ -68,39 +82,38 @@
         .about-hero__eyebrow::after {
             content: '';
             width: 40px;
-            height: 1px;
+            height: 2px;
             background: var(--color-secondary);
         }
         
         .about-hero__title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 400;
-            margin-bottom: var(--space-md);
-            letter-spacing: -0.02em;
-            color: var(--color-charcoal);
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-text-main);
         }
         
         .about-hero__subtitle {
             font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: var(--color-text-muted);
+            font-size: 1.2rem;
+            color: var(--color-text-light);
             max-width: 600px;
             margin: 0 auto;
-            font-weight: 300;
-            line-height: 1.7;
+            font-weight: 400;
+            line-height: 1.8;
         }
         
-        /* Bio Section - Elegant Monochromatic */
+        /* Bio Section */
         .bio-section {
-            padding: var(--space-3xl) 0;
-            background: #ffffff;
+            padding: 8rem 0;
+            background: white;
         }
         
         .bio-grid {
             display: grid;
             grid-template-columns: 350px 1fr;
-            gap: var(--space-3xl);
+            gap: 4rem;
             align-items: start;
         }
         
@@ -113,8 +126,8 @@
             width: 100%;
             aspect-ratio: 3/4;
             background: url('../Image Assets/index3.jpeg') center center / cover no-repeat;
-            border-radius: 2px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
             overflow: hidden;
         }
         
@@ -129,193 +142,154 @@
         .credential-badge {
             display: inline-flex;
             align-items: center;
-            gap: var(--space-xs);
-            padding: var(--space-sm) var(--space-md);
-            border-radius: 0;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
             font-family: var(--font-body);
-            font-size: var(--text-sm);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            background: #ffffff;
-            color: #1a1a1a;
-            border: 1px solid #1a1a1a;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: white;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
             transition: all 0.3s ease;
         }
         
         .credential-badge:hover {
-            background: #1a1a1a;
-            color: #ffffff;
-        }
-        
-        .credential-badge--primary,
-        .credential-badge--secondary {
-            background: #ffffff;
-            color: #1a1a1a;
-            border: 1px solid #1a1a1a;
-        }
-        
-        .credential-badge--primary:hover,
-        .credential-badge--secondary:hover {
-            background: #1a1a1a;
-            color: #ffffff;
+            background: var(--color-primary);
+            color: white;
         }
         
         .bio-content h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-text-main);
             margin-bottom: var(--space-lg);
-            font-weight: 400;
+            font-weight: 700;
         }
         
         .bio-content p {
             font-family: var(--font-body);
-            font-size: var(--text-base);
-            line-height: 1.9;
-            color: #4a4a4a;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
             margin-bottom: var(--space-md);
-            font-weight: 300;
         }
         
-        .bio-content p:last-of-type {
-            margin-bottom: 0;
-        }
-        
-        /* Philosophy Section - Refined Monochromatic */
+        /* Philosophy Section */
         .philosophy-section {
-            background: #fafafa;
-            padding: var(--space-3xl) 0;
+            background: var(--color-bg-light);
+            padding: 8rem 0;
         }
         
         .philosophy-header {
             text-align: center;
-            margin-bottom: var(--space-3xl);
+            margin-bottom: 4rem;
         }
         
         .philosophy-header h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-text-main);
             margin-bottom: var(--space-md);
-            font-weight: 400;
         }
         
         .philosophy-header p {
             font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #888888;
+            font-size: 1.1rem;
+            color: var(--color-text-light);
             max-width: 700px;
             margin: 0 auto;
-            font-weight: 300;
         }
         
         .philosophy-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-xl);
+            gap: 3rem;
         }
         
         .philosophy-card {
-            background: var(--color-white);
-            border-radius: 2px;
+            background: white;
+            border-radius: var(--radius-lg);
             padding: var(--space-xl);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-border);
         }
         
         .philosophy-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
         }
         
         .philosophy-card__icon {
             width: 60px;
             height: 60px;
-            border-radius: 0;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: var(--space-lg);
-        }
-        
-        /* Pastel colors for each philosophy card icon */
-        .philosophy-card:nth-child(1) .philosophy-card__icon {
-            background: linear-gradient(135deg, #E8D5E2 0%, #f5eef3 100%); /* Mauve */
-        }
-        .philosophy-card:nth-child(2) .philosophy-card__icon {
-            background: linear-gradient(135deg, #D5E5E8 0%, #eef5f6 100%); /* Teal */
-        }
-        .philosophy-card:nth-child(3) .philosophy-card__icon {
-            background: linear-gradient(135deg, #E8E2D5 0%, #f5f3ee 100%); /* Sand */
-        }
-        .philosophy-card:nth-child(4) .philosophy-card__icon {
-            background: linear-gradient(135deg, #D5E8DE 0%, #eef5f1 100%); /* Sage */
-        }
-        
-        .philosophy-card__icon i {
+            background: var(--color-primary-light);
+            color: var(--color-primary);
             font-size: 1.5rem;
-            color: #3d3d3d;
         }
         
         .philosophy-card h3 {
-            font-family: var(--font-display);
-            font-size: var(--text-xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-text-main);
             margin-bottom: var(--space-md);
-            font-weight: 500;
+            font-weight: 600;
         }
         
         .philosophy-card p {
             font-family: var(--font-body);
-            font-size: var(--text-sm);
+            font-size: 1rem;
             line-height: 1.8;
-            color: #666666;
-            font-weight: 300;
+            color: var(--color-text-light);
         }
         
-        /* Knowledge Share Section - Elegant Monochromatic */
+        /* Knowledge Share Section */
         .knowledge-section {
-            padding: var(--space-3xl) 0;
-            background: #ffffff;
+            padding: 8rem 0;
+            background: white;
         }
         
         .knowledge-header {
             text-align: center;
-            margin-bottom: var(--space-3xl);
+            margin-bottom: 4rem;
         }
         
         .knowledge-header h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-text-main);
             margin-bottom: var(--space-md);
-            font-weight: 400;
         }
         
         .knowledge-header p {
             font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #888888;
+            font-size: 1.1rem;
+            color: var(--color-text-light);
             max-width: 600px;
             margin: 0 auto;
-            font-weight: 300;
         }
         
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-xl);
+            gap: 3rem;
         }
         
         .article-card {
-            background: var(--color-white);
-            border-radius: 2px;
+            background: white;
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
             cursor: pointer;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--color-border);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -323,61 +297,44 @@
         
         .article-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
         }
         
         .article-card__header {
-            background: linear-gradient(135deg, #E8D5E2 0%, #D5E5E8 100%);
-            padding: var(--space-xl);
+            background: var(--color-bg-light);
+            padding: 2rem;
             position: relative;
             display: flex;
             flex-direction: column;
-            min-height: 180px;
-        }
-        
-        /* Pastel backgrounds for different article categories */
-        .article-card:nth-child(1) .article-card__header {
-            background: linear-gradient(135deg, #E8D5E2 0%, #f5eef3 100%); /* Mauve */
-        }
-        .article-card:nth-child(2) .article-card__header {
-            background: linear-gradient(135deg, #D5E5E8 0%, #eef5f6 100%); /* Teal */
-        }
-        .article-card:nth-child(3) .article-card__header {
-            background: linear-gradient(135deg, #E8E2D5 0%, #f5f3ee 100%); /* Sand */
-        }
-        .article-card:nth-child(4) .article-card__header {
-            background: linear-gradient(135deg, #D5E8DE 0%, #eef5f1 100%); /* Sage */
-        }
-        .article-card:nth-child(5) .article-card__header {
-            background: linear-gradient(135deg, #E2D5E8 0%, #f3eef5 100%); /* Lavender */
-        }
-        .article-card:nth-child(6) .article-card__header {
-            background: linear-gradient(135deg, #D5DEE8 0%, #eef1f5 100%); /* Sky */
+            min-height: 260px;
+            border-bottom: 1px solid var(--color-border);
         }
         
         .article-card__category {
             display: inline-flex;
             align-items: center;
-            gap: var(--space-xs);
-            background: rgba(26, 26, 26, 0.08);
-            color: #4a4a4a;
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: 0;
+            gap: 0.5rem;
+            background: white;
+            color: var(--color-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
             font-family: var(--font-body);
-            font-size: var(--text-xs);
-            font-weight: 500;
+            font-size: 0.8rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: var(--space-md);
             align-self: flex-start;
+            box-shadow: var(--shadow-sm);
         }
         
         .article-card__title {
-            font-family: var(--font-display);
-            font-size: var(--text-xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-text-main);
             line-height: 1.3;
-            font-weight: 500;
+            font-weight: 600;
             margin-top: auto;
         }
         
@@ -390,54 +347,54 @@
         
         .article-card__excerpt {
             font-family: var(--font-body);
-            font-size: var(--text-sm);
+            font-size: 0.95rem;
             line-height: 1.8;
-            color: #666666;
+            color: var(--color-text-light);
             margin-bottom: var(--space-md);
-            font-weight: 300;
             flex-grow: 1;
         }
         
         .article-card__footer {
             margin-top: auto;
             padding-top: var(--space-md);
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .article-card__meta {
             display: flex;
             align-items: center;
-            gap: var(--space-md);
+            gap: 1rem;
             font-family: var(--font-body);
-            font-size: var(--text-xs);
-            color: #888888;
+            font-size: 0.85rem;
+            color: var(--color-text-light);
         }
         
         .article-card__meta span {
             display: flex;
             align-items: center;
-            gap: var(--space-xs);
+            gap: 0.25rem;
         }
         
         .article-card__cta {
             display: inline-flex;
             align-items: center;
-            gap: var(--space-xs);
-            color: #1a1a1a;
+            gap: 0.5rem;
+            color: var(--color-primary);
             font-family: var(--font-body);
-            font-weight: 500;
-            font-size: var(--text-sm);
-            margin-top: var(--space-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            letter-spacing: 0.5px;
         }
         
-        .article-card__cta:hover {
-            color: #666666;
-            gap: var(--space-sm);
+        .article-card:hover .article-card__cta {
+            color: var(--color-accent);
+            gap: 0.75rem;
         }
         
-        /* Article Modal - Refined Monochromatic */
+        /* Article Modal */
         .article-modal {
             display: none;
             position: fixed;
@@ -445,7 +402,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 10000;
             overflow-y: auto;
             padding: var(--space-xl);
@@ -458,13 +415,14 @@
         }
         
         .article-modal__content {
-            background: var(--color-white);
-            border-radius: 2px;
+            background: white;
+            border-radius: var(--radius-lg);
             max-width: 800px;
             width: 100%;
             margin: var(--space-xl) auto;
             position: relative;
             animation: modalSlideIn 0.3s ease;
+            box-shadow: var(--shadow-lg);
         }
         
         @keyframes modalSlideIn {
@@ -479,29 +437,10 @@
         }
         
         .article-modal__header {
-            background: linear-gradient(135deg, #E8D5E2 0%, #f5eef3 100%);
+            background: var(--color-bg-light);
             padding: var(--space-2xl);
-            border-radius: 2px 2px 0 0;
-        }
-        
-        /* Pastel variants for modal header */
-        .article-modal__header--mauve {
-            background: linear-gradient(135deg, #E8D5E2 0%, #f5eef3 100%);
-        }
-        .article-modal__header--teal {
-            background: linear-gradient(135deg, #D5E5E8 0%, #eef5f6 100%);
-        }
-        .article-modal__header--sand {
-            background: linear-gradient(135deg, #E8E2D5 0%, #f5f3ee 100%);
-        }
-        .article-modal__header--sage {
-            background: linear-gradient(135deg, #D5E8DE 0%, #eef5f1 100%);
-        }
-        .article-modal__header--lavender {
-            background: linear-gradient(135deg, #E2D5E8 0%, #f3eef5 100%);
-        }
-        .article-modal__header--sky {
-            background: linear-gradient(135deg, #D5DEE8 0%, #eef1f5 100%);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            border-bottom: 1px solid var(--color-border);
         }
         
         .article-modal__close {
@@ -510,58 +449,62 @@
             right: var(--space-lg);
             width: 40px;
             height: 40px;
-            background: rgba(26, 26, 26, 0.1);
-            border: none;
-            border-radius: 0;
-            color: #1a1a1a;
-            font-size: var(--text-lg);
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            color: var(--color-text-main);
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: var(--shadow-sm);
         }
         
         .article-modal__close:hover {
-            background: rgba(26, 26, 26, 0.2);
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
         }
         
         .article-modal__category {
             display: inline-flex;
             align-items: center;
-            gap: var(--space-xs);
-            background: rgba(26, 26, 26, 0.08);
-            color: #4a4a4a;
-            padding: var(--space-xs) var(--space-md);
-            border-radius: 0;
+            gap: 0.5rem;
+            background: white;
+            color: var(--color-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
             font-family: var(--font-body);
-            font-size: var(--text-sm);
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: var(--space-md);
             letter-spacing: 1px;
+            box-shadow: var(--shadow-sm);
         }
         
         .article-modal__title {
-            font-family: var(--font-display);
-            font-size: var(--text-2xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-text-main);
             line-height: 1.3;
             margin-bottom: var(--space-md);
-            font-weight: 400;
+            font-weight: 700;
         }
         
         .article-modal__meta {
             display: flex;
             gap: var(--space-lg);
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--color-text-light);
             font-family: var(--font-body);
-            font-size: var(--text-sm);
+            font-size: 0.9rem;
         }
         
         .article-modal__meta span {
             display: flex;
             align-items: center;
-            gap: var(--space-xs);
+            gap: 0.5rem;
         }
         
         .article-modal__body {
@@ -570,18 +513,17 @@
         
         .article-content {
             font-family: var(--font-body);
-            font-size: var(--text-base);
-            line-height: 1.9;
-            color: #4a4a4a;
-            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
         }
         
         .article-content h3 {
-            font-family: var(--font-display);
-            font-size: var(--text-xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-text-main);
             margin: var(--space-xl) 0 var(--space-md);
-            font-weight: 500;
+            font-weight: 600;
         }
         
         .article-content h3:first-child {
@@ -590,62 +532,53 @@
         
         .article-content p {
             margin-bottom: var(--space-md);
+            color: var(--color-text-light);
         }
         
         .article-content ul,
         .article-content ol {
             margin: var(--space-md) 0;
             padding-left: var(--space-xl);
+            color: var(--color-text-light);
         }
         
         .article-content li {
-            margin-bottom: var(--space-sm);
+            margin-bottom: 0.5rem;
         }
         
         .article-content strong {
-            color: #1a1a1a;
-            font-weight: 500;
+            color: var(--color-text-main);
+            font-weight: 600;
         }
         
-        /* CTA Section - Light Background */
+        /* CTA Section */
         .about-cta {
-            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
-            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            padding: 8rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-        
-        .about-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d2d2d' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
+            color: white;
         }
         
         .about-cta h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: white;
             margin-bottom: var(--space-md);
-            font-weight: 400;
+            font-weight: 700;
             position: relative;
             z-index: 1;
         }
         
         .about-cta p {
             font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #4a4a4a;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: var(--space-xl);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 300;
             position: relative;
             z-index: 1;
         }
@@ -769,7 +702,7 @@
                 </div>
                 
                 <div class="philosophy-image" style="margin-bottom: var(--space-2xl);">
-                    <img src="../Image Assets/Index2.jpeg" alt="Home inspection cross section" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 2px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);">
+                    <img src="../Image Assets/Index2.jpeg" alt="Home inspection cross section" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
                 </div>
                 
                 <div class="philosophy-grid">
@@ -818,8 +751,8 @@
                 
                 <div class="articles-grid" id="articles-container">
                     <!-- Articles will be loaded dynamically from JSON -->
-                    <div style="text-align: center; padding: var(--space-2xl); color: var(--color-medium-gray);">
-                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: var(--space-md);"></i>
+                    <div style="text-align: center; padding: var(--space-2xl); color: var(--color-text-light);">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: var(--space-md); color: var(--color-primary);"></i>
                         <p>正在加载文章...</p>
                     </div>
                 </div>
@@ -853,8 +786,8 @@
                 <p>
                     让 Michael 和 TO Inspect 团队为您提供全面、专业的检验服务，让您安心无忧。
                 </p>
-                <a href="quote.html" class="btn btn--primary">获取报价</a>
-                <a href="services.html" class="btn btn--secondary">查看服务</a>
+                <a href="quote.html" class="btn btn--primary" style="background: white; color: var(--color-primary);">获取报价</a>
+                <a href="services.html" class="btn btn--outline" style="border-color: white; color: white;">查看服务</a>
             </div>
         </section>
         
@@ -895,7 +828,7 @@
             
             if (articles.length === 0) {
                 container.innerHTML = `
-                    <div style="text-align: center; padding: var(--space-2xl); color: var(--color-medium-gray);">
+                    <div style="text-align: center; padding: var(--space-2xl); color: var(--color-text-light);">
                         <p>目前没有可用的文章。</p>
                     </div>
                 `;
@@ -930,24 +863,13 @@
         // Format date for display
         function formatDate(dateString) {
             const options = { year: 'numeric', month: 'short', day: 'numeric' };
-            return new Date(dateString).toLocaleDateString('en-US', options);
+            return new Date(dateString).toLocaleDateString('zh-CN', options);
         }
         
         // Open article modal
         function openArticle(articleId, cardIndex) {
             const article = articlesData.find(a => a.id === articleId);
             if (!article) return;
-            
-            // Pastel color classes matching card order
-            const pastelClasses = ['mauve', 'teal', 'sand', 'sage', 'lavender', 'sky'];
-            const modalHeader = document.querySelector('.article-modal__header');
-            
-            // Remove any existing pastel classes
-            pastelClasses.forEach(cls => modalHeader.classList.remove(`article-modal__header--${cls}`));
-            
-            // Add the matching pastel class based on card index
-            const colorIndex = cardIndex % pastelClasses.length;
-            modalHeader.classList.add(`article-modal__header--${pastelClasses[colorIndex]}`);
             
             document.getElementById('modal-category').innerHTML = `<i class="fas ${article.icon}"></i> ${article.category}`;
             document.getElementById('modal-title').textContent = article.title;

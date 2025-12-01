@@ -9,817 +9,116 @@
     
     <title>TO Inspect Ltd. | 多伦多及大多伦多地区专业验房服务</title>
     
-    <!-- Fonts - Elegant Typography -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style-modern.css">
     
-    <!-- Home Page Specific Styles -->
+    <!-- Chinese Specific Styles -->
     <style>
-        /* Hero Section - Vivid Image with Readable Text */
+        /* Adjust fonts for Chinese characters */
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li, div {
+            font-family: 'Inter', 'Noto Serif SC', sans-serif;
+        }
+        
+        .home-hero__title, .section-header h2 {
+            font-family: 'Poppins', 'Noto Serif SC', sans-serif;
+        }
+        
+        /* Hero Background Override */
         .home-hero {
-            min-height: 90vh;
-            background: url('../Image Assets/index1.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Image Assets/index1.jpeg');
         }
         
-        .home-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
+        /* About Mike Photo Override */
+        .about-mike__photo {
+            background-image: url('../Image Assets/index3.jpeg');
         }
-        
-        .home-hero__container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: 750px;
-            position: relative;
-            z-index: 1;
+
+        /* Spacing & Typography Overrides */
+        body {
+            line-height: 1.8;
         }
-        
-        .home-hero__content {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: var(--space-2xl) var(--space-3xl);
-            border-radius: 4px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            color: #1a1a1a;
-        }
-        
-        .home-hero__badge {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-sm);
-            background: rgba(0, 0, 0, 0.06);
-            color: #666666;
-            padding: var(--space-xs) var(--space-md);
-            border-radius: var(--radius-full);
-            font-size: var(--text-sm);
-            font-weight: 500;
-            margin-bottom: var(--space-lg);
-            letter-spacing: 1px;
+
+        .home-hero {
+            padding: 8rem 0;
         }
         
         .home-hero__title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: var(--space-lg);
-            letter-spacing: -0.02em;
-            color: #1a1a1a;
+            font-size: 4rem;
+            margin-bottom: 2rem;
         }
-        
-        .home-hero__title span {
-            color: #666666;
-        }
-        
+
         .home-hero__text {
-            font-family: var(--font-body);
-            font-size: var(--text-lg);
-            line-height: 1.8;
-            color: #4a4a4a;
-            margin-bottom: var(--space-xl);
-            font-weight: 300;
-        }
-        
-        .home-hero__actions {
-            display: flex;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-        }
-        
-        .home-hero__actions .btn--outline {
-            background: transparent;
-            border: 1px solid #1a1a1a;
-            color: #1a1a1a;
-        }
-        
-        .home-hero__actions .btn--outline:hover {
-            background: #1a1a1a;
-            color: #ffffff;
-            border-color: #1a1a1a;
+            margin-bottom: 3rem;
         }
         
         .home-hero__stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-2xl);
-            padding-top: var(--space-xl);
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            gap: 4rem;
+            margin-top: 4rem;
         }
-        
-        .home-hero__stat {
-            text-align: center;
-        }
-        
-        .home-hero__stat-number {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            font-weight: 500;
-            color: #1a1a1a;
-        }
-        
-        .home-hero__stat-label {
-            font-size: var(--text-sm);
-            color: #888888;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-        
-        @media (max-width: 992px) {
-            .home-hero__container {
-                text-align: center;
-            }
-            
-            .home-hero__actions {
-                justify-content: center;
-            }
-            
-            .home-hero {
-                background-attachment: scroll;
-            }
-        }
-        
-        /* About Mike Section - Refined Monochromatic */
-        .about-mike {
-            padding: var(--space-3xl) 0;
-            background: var(--color-white);
-        }
-        
-        .about-mike__grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: var(--space-3xl);
-            align-items: center;
-        }
-        
-        .about-mike__image {
-            position: relative;
-        }
-        
-        .about-mike__photo {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: url('../Image Assets/index3.jpeg');
-            background-size: cover;
-            background-position: center top;
-            border-radius: 2px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            color: #ffffff;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-mike__photo::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
-        }
-        
-        .about-mike__photo span {
-            position: relative;
-            z-index: 1;
-            padding-bottom: var(--space-md);
-            font-weight: 500;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-        
-        .about-mike__photo i {
-            display: none;
-        }
-        
-        .about-mike__credentials {
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1a1a1a;
-            color: var(--color-white);
-            padding: var(--space-sm) var(--space-lg);
-            border-radius: 0;
-            font-weight: 500;
-            font-size: var(--text-sm);
-            white-space: nowrap;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            letter-spacing: 1px;
-        }
-        
-        .about-mike__content h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
-            margin-bottom: var(--space-md);
-            font-weight: 400;
-        }
-        
-        .about-mike__content h2 span {
-            color: #4a4a4a;
-        }
-        
-        .about-mike__subtitle {
-            font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #888888;
-            margin-bottom: var(--space-lg);
-            font-weight: 300;
-        }
-        
-        .about-mike__text {
-            font-family: var(--font-body);
-            font-size: var(--text-base);
-            line-height: 1.9;
-            color: #4a4a4a;
-            margin-bottom: var(--space-lg);
-            font-weight: 300;
-        }
-        
-        .about-mike__badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-xl);
-        }
-        
-        .about-mike__badge {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background: #f5f5f5;
-            padding: var(--space-xs) var(--space-md);
-            border-radius: 0;
-            font-size: var(--text-sm);
-            font-weight: 400;
-            color: #4a4a4a;
-        }
-        
-        .about-mike__badge i {
-            color: #1a1a1a;
-        }
-        
-        @media (max-width: 768px) {
-            .about-mike__grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .about-mike__image {
-                max-width: 250px;
-                margin: 0 auto var(--space-xl);
-            }
-            
-            .about-mike__badges {
-                justify-content: center;
-            }
-        }
-        
-        /* Services Overview Section - Elegant Monochromatic */
-        .services-overview {
-            padding: var(--space-3xl) 0;
-            background: #fafafa;
-        }
-        
-        .services-overview__header {
-            text-align: center;
-            margin-bottom: var(--space-3xl);
-        }
-        
-        .services-overview__header h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
-            margin-bottom: var(--space-md);
-            font-weight: 400;
-        }
-        
-        .services-overview__header p {
-            font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #888888;
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-xl);
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .service-card {
-            background: var(--color-white);
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-card__icon {
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Pastel colors for each service card */
-        .service-card:nth-child(1) .service-card__icon {
-            background: linear-gradient(135deg, #E8D5E2 0%, #F2E6EE 100%); /* Soft Mauve */
-        }
-        .service-card:nth-child(2) .service-card__icon {
-            background: linear-gradient(135deg, #D5E5E8 0%, #E6F0F2 100%); /* Soft Teal */
-        }
-        .service-card:nth-child(3) .service-card__icon {
-            background: linear-gradient(135deg, #E8E2D5 0%, #F2EDE6 100%); /* Soft Sand */
-        }
-        .service-card:nth-child(4) .service-card__icon {
-            background: linear-gradient(135deg, #D5E8DE 0%, #E6F2EB 100%); /* Soft Sage */
-        }
-        .service-card:nth-child(5) .service-card__icon {
-            background: linear-gradient(135deg, #E2D5E8 0%, #EDE6F2 100%); /* Soft Lavender */
-        }
-        .service-card:nth-child(6) .service-card__icon {
-            background: linear-gradient(135deg, #D5DEE8 0%, #E6EBF2 100%); /* Soft Sky */
-        }
-        
-        .service-card__icon i {
-            font-size: 2.5rem;
-            color: #3d3d3d;
-        }
-        
-        .service-card__content {
-            padding: var(--space-xl);
-        }
-        
-        .service-card__title {
-            font-family: var(--font-display);
-            font-size: var(--text-xl);
-            color: #1a1a1a;
-            margin-bottom: var(--space-sm);
-            font-weight: 500;
-        }
-        
-        .service-card__text {
-            font-family: var(--font-body);
-            font-size: var(--text-sm);
-            color: #666666;
-            line-height: 1.8;
-            margin-bottom: var(--space-md);
-            font-weight: 300;
-        }
-        
-        .service-card__link {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            color: #1a1a1a;
-            font-weight: 500;
-            font-size: var(--text-sm);
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-        
-        .service-card__link:hover {
-            color: #666666;
-            gap: var(--space-sm);
-        }
-        
-        .services-overview__cta {
-            text-align: center;
-        }
-        
-        /* Features Strip - Light Cream Background (matching Services Hero) */
+
         .features-strip {
-            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
-            padding: var(--space-xl) 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .features-strip::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d2d2d' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            pointer-events: none;
+            padding: 6rem 0;
         }
         
         .features-strip__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-xl);
-            position: relative;
-            z-index: 1;
+            gap: 3rem;
+        }
+
+        .about-mike {
+            padding: 8rem 0;
         }
         
-        .features-strip__item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-            color: #1a1a1a;
+        .about-mike__grid {
+            gap: 6rem;
+        }
+
+        .services-overview {
+            padding: 8rem 0;
         }
         
-        .features-strip__icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(26, 26, 26, 0.08);
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+        .services-grid {
+            gap: 2.5rem;
         }
-        
-        .features-strip__icon i {
-            font-size: var(--text-xl);
-            color: #1a1a1a;
-        }
-        
-        .features-strip__text {
-            font-family: var(--font-body);
-            font-size: var(--text-sm);
-            font-weight: 500;
-            line-height: 1.4;
-            letter-spacing: 0.5px;
-            color: #4a4a4a;
-        }
-        
-        /* Reviews Section - Refined Monochromatic */
-        .reviews-section {
-            padding: var(--space-3xl) 0;
-            background: var(--color-white);
-        }
-        
-        .reviews-section__header {
-            text-align: center;
-            margin-bottom: var(--space-3xl);
-        }
-        
-        .reviews-section__header h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
-            margin-bottom: var(--space-md);
-            font-weight: 400;
-        }
-        
-        .reviews-section__header p {
-            font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #888888;
-            font-weight: 300;
-        }
-        
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-xl);
-        }
-        
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-xl);
-            align-items: stretch;
-        }
-        
-        .review-card {
-            background: #fafafa;
-            border-radius: 2px;
-            padding: var(--space-xl);
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .review-card::before {
-            content: '"';
-            position: absolute;
-            top: var(--space-md);
-            right: var(--space-lg);
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: #d4d4d4;
-            line-height: 1;
-        }
-        
-        .review-card__stars {
-            margin-bottom: var(--space-md);
-        }
-        
-        .review-card__stars i {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 1.1rem;
-            position: relative;
-            margin-right: 2px;
-        }
-        
-        .review-card__stars i::before {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
-        }
-        
-        .review-card__text {
-            font-family: var(--font-body);
-            font-size: var(--text-base);
-            line-height: 1.8;
-            color: #4a4a4a;
-            margin-bottom: var(--space-lg);
-            position: relative;
-            z-index: 1;
-            font-weight: 300;
-            flex-grow: 1;
-        }
-        
-        .review-card__author {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-            margin-top: auto;
-            padding-top: var(--space-md);
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
-        
-        .review-card__avatar {
-            width: 50px;
-            height: 50px;
-            background: #1a1a1a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: var(--text-lg);
-        }
-        
-        .review-card__name {
-            font-weight: 500;
-            color: #1a1a1a;
-        }
-        
-        .review-card__location {
-            font-size: var(--text-sm);
-            color: #888888;
-        }
-        
-        .review-card__type {
-            font-size: var(--text-xs);
-            color: #666666;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        /* CTA Section - Matching Areas Preview */
-        .home-cta {
-            background: #fafafa;
-            padding: var(--space-3xl) 0;
-            text-align: center;
-            color: #1a1a1a;
-        }
-        
-        .home-cta h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            margin-bottom: var(--space-md);
-            font-weight: 400;
-            color: #1a1a1a;
-        }
-        
-        .home-cta p {
-            font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #666666;
-            max-width: 600px;
-            margin: 0 auto var(--space-xl);
-            font-weight: 300;
-        }
-        
-        .home-cta__actions {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-        }
-        
-        .home-cta__phone {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-sm);
-            background: transparent;
-            border: 1px solid #1a1a1a;
-            color: #1a1a1a;
-            padding: var(--space-sm) var(--space-xl);
-            border-radius: 0;
-            font-size: var(--text-lg);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-        
-        .home-cta__phone:hover {
-            background: #1a1a1a;
-            color: #ffffff;
-            border-color: #1a1a1a;
-        }
-        
-        /* Service Areas Preview - Refined Monochromatic */
-        .areas-preview {
-            background: #fafafa;
-            padding: var(--space-2xl) 0;
-        }
-        
-        .areas-preview__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: var(--space-lg);
-        }
-        
-        .areas-preview__text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-md);
-        }
-        
-        .areas-preview__icon {
-            width: 50px;
-            height: 50px;
-            background: transparent;
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .areas-preview__icon i {
-            color: var(--color-red);
-            font-size: 2.5rem;
-        }
-        
-        .areas-preview h3 {
-            font-family: var(--font-display);
-            color: #1a1a1a;
-            margin-bottom: 2px;
-            font-weight: 500;
-        }
-        
-        .areas-preview p {
-            font-family: var(--font-body);
-            font-size: var(--text-sm);
-            color: #888888;
-            font-weight: 300;
-        }
-        
-        .areas-preview__list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-sm);
-            justify-content: center;
-        }
-        
-        .areas-preview__tag {
-            background: var(--color-white);
-            padding: var(--space-xs) var(--space-md);
-            border-radius: 0;
-            font-family: var(--font-body);
-            font-size: var(--text-sm);
-            color: #4a4a4a;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-        }
-        
-        /* Inspection Portfolio Section */
+
         .portfolio-section {
-            padding: var(--space-3xl) 0;
-            background: #fafafa;
-        }
-        
-        .portfolio-section__header {
-            text-align: center;
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .portfolio-section__header h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            color: #1a1a1a;
-            margin-bottom: var(--space-md);
-            font-weight: 400;
-        }
-        
-        .portfolio-section__header p {
-            font-family: var(--font-body);
-            font-size: var(--text-lg);
-            color: #888888;
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
+            padding: 8rem 0;
         }
         
         .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-md);
+            gap: 1.5rem;
+        }
+
+        .reviews-section {
+            padding: 8rem 0;
         }
         
-        .portfolio-item {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            border-radius: 2px;
-            cursor: pointer;
+        .reviews-grid {
+            gap: 2.5rem;
+        }
+
+        .areas-preview {
+            padding: 8rem 0;
+        }
+
+        .home-cta {
+            padding: 8rem 0;
         }
         
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.08);
-        }
-        
-        .portfolio-item__overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: flex-end;
-            padding: var(--space-md);
-        }
-        
-        .portfolio-item:hover .portfolio-item__overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-item__label {
-            color: #ffffff;
-            font-family: var(--font-body);
-            font-size: var(--text-sm);
-            font-weight: 500;
-        }
-        
-        @media (max-width: 992px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* Ensure text readability */
+        .home-hero__text, 
+        .about-mike__text, 
+        .service-card__text, 
+        .review-card__text,
+        .home-cta p {
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -833,7 +132,7 @@
             <div class="home-hero__container">
                 <div class="home-hero__content">
                     <span class="home-hero__badge">
-                        <i class="fas fa-shield-alt" style="color: #2d5a3d;"></i> 值得信赖的多伦多验房师
+                        <i class="fas fa-shield-alt"></i> 值得信赖的多伦多验房师
                     </span>
                     <h1 class="home-hero__title">
                         您<span>房产置业</span>的可靠伙伴
@@ -848,11 +147,11 @@
                     
                     <div class="home-hero__stats">
                         <div class="home-hero__stat">
-                            <div class="home-hero__stat-number" style="color: var(--color-red);">1000+</div>
+                            <div class="home-hero__stat-number">1000+</div>
                             <div class="home-hero__stat-label">验房案例</div>
                         </div>
                         <div class="home-hero__stat">
-                            <div class="home-hero__stat-number" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">5.0</div>
+                            <div class="home-hero__stat-number">5.0</div>
                             <div class="home-hero__stat-label">Google评分</div>
                         </div>
                         <div class="home-hero__stat">
@@ -914,7 +213,7 @@
                     </div>
                     
                     <div class="about-mike__content">
-                        <h2>认识<span>Michael Heart</span>，RHI</h2>
+                        <h2>认识 <span>Michael Heart</span>，RHI</h2>
                         <p class="about-mike__subtitle">注册验房师 & TO Inspect Ltd. 创始人</p>
                         <p class="about-mike__text">
                             凭借多年建筑和装修领域的实战经验，Michael为每一次验房带来独特的专业视角。作为注册验房师（RHI）和安大略省验房师协会（OAHI）的成员，他致力于提供全面、公正的评估，帮助您自信地做出房产决策。
@@ -945,7 +244,7 @@
                 </div>
                 
                 <div class="services-grid">
-                    <!-- 购房前验房 -->
+                    <!-- Pre-Purchase -->
                     <div class="service-card">
                         <div class="service-card__icon">
                             <i class="fas fa-search-dollar"></i>
@@ -961,7 +260,7 @@
                         </div>
                     </div>
                     
-                    <!-- 卖房前验房 -->
+                    <!-- Pre-Listing -->
                     <div class="service-card">
                         <div class="service-card__icon">
                             <i class="fas fa-house-circle-check"></i>
@@ -977,7 +276,7 @@
                         </div>
                     </div>
                     
-                    <!-- 公寓验房 -->
+                    <!-- Condo -->
                     <div class="service-card">
                         <div class="service-card__icon">
                             <i class="fas fa-building"></i>
@@ -993,7 +292,7 @@
                         </div>
                     </div>
                     
-                    <!-- Tarion保修验房 -->
+                    <!-- Tarion Warranty -->
                     <div class="service-card">
                         <div class="service-card__icon">
                             <i class="fas fa-clipboard-check"></i>
@@ -1009,7 +308,7 @@
                         </div>
                     </div>
                     
-                    <!-- 红外热成像 -->
+                    <!-- Thermal Imaging -->
                     <div class="service-card">
                         <div class="service-card__icon">
                             <i class="fas fa-thermometer-half"></i>
@@ -1025,7 +324,7 @@
                         </div>
                     </div>
                     
-                    <!-- 商业物业评估 -->
+                    <!-- Commercial -->
                     <div class="service-card">
                         <div class="service-card__icon">
                             <i class="fas fa-store"></i>
@@ -1048,7 +347,7 @@
             </div>
         </section>
         
-        <!-- 验房实拍展示 -->
+        <!-- Inspection Portfolio Section -->
         <section class="portfolio-section">
             <div class="container">
                 <div class="portfolio-section__header">
@@ -1142,7 +441,7 @@
                 </div>
                 
                 <div class="reviews-grid">
-                    <!-- 评价 1 -->
+                    <!-- Review 1 -->
                     <div class="review-card">
                         <div class="review-card__stars">
                             <i class="fas fa-star"></i>
@@ -1164,7 +463,7 @@
                         </div>
                     </div>
                     
-                    <!-- 评价 2 -->
+                    <!-- Review 2 -->
                     <div class="review-card">
                         <div class="review-card__stars">
                             <i class="fas fa-star"></i>
@@ -1186,7 +485,7 @@
                         </div>
                     </div>
                     
-                    <!-- 评价 3 -->
+                    <!-- Review 3 -->
                     <div class="review-card">
                         <div class="review-card__stars">
                             <i class="fas fa-star"></i>
@@ -1233,7 +532,7 @@
                         <span class="areas-preview__tag">列治文山</span>
                         <span class="areas-preview__tag">奥克维尔</span>
                         <span class="areas-preview__tag">皮克林</span>
-                        <a href="quote.html" class="areas-preview__tag" style="background: #1a1a1a; color: #ffffff; font-weight: 500;">+ 更多地区</a>
+                        <a href="quote.html" class="areas-preview__tag areas-preview__tag--more">+ 更多地区</a>
                     </div>
                 </div>
             </div>
@@ -1247,7 +546,7 @@
                     凭借当日电子报告和专业红外热成像技术，我们为您提供清晰、真实的信息，让您自信做出决策。
                 </p>
                 <div class="home-cta__actions">
-                    <a href="quote.html" class="btn btn--primary" style="font-size: var(--text-lg);">获取报价</a>
+                    <a href="quote.html" class="btn btn--primary">获取报价</a>
                     <a href="tel:+16475558888" class="home-cta__phone">
                         <i class="fas fa-phone"></i> (647) 555-8888
                     </a>

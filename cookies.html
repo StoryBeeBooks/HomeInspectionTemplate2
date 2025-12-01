@@ -4,234 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Policy | TO Inspect Ltd.</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style-modern.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Cookie Policy Specific Styles */
-        .cookie-hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 120px 0 80px;
+        body {
+            line-height: 1.8;
+        }
+
+        /* Policy Page Specific Styles */
+        .policy-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 8rem 0;
             text-align: center;
+            color: white;
         }
         
-        .cookie-hero__title {
-            font-family: 'Cormorant Garamond', serif;
+        .policy-hero__title {
+            font-family: 'Poppins', sans-serif;
             font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 600;
-            color: #ffffff;
+            font-weight: 700;
             margin-bottom: 1rem;
-            letter-spacing: 0.02em;
         }
         
-        .cookie-hero__subtitle {
-            font-family: 'Lato', sans-serif;
+        .policy-hero__subtitle {
             font-size: 1.1rem;
-            color: #888888;
-            font-weight: 300;
+            opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
-        
-        .cookie-hero__date {
+
+        .policy-hero__badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 0.5rem 1.25rem;
             border-radius: 50px;
-            font-family: 'Lato', sans-serif;
             font-size: 0.85rem;
-            color: #cccccc;
+            color: white;
             margin-top: 1.5rem;
-            letter-spacing: 0.02em;
+            font-weight: 500;
         }
         
-        .cookie-content {
-            background-color: #fafafa;
-            padding: 80px 0;
+        .policy-content {
+            padding: 8rem 0;
+            background-color: var(--light-bg);
         }
         
-        .cookie-container {
+        .policy-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
         }
         
-        .cookie-intro {
-            background: #ffffff;
+        .policy-intro {
+            background: white;
             border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 3rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid #1a1a1a;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--primary-color);
         }
         
-        .cookie-intro__company {
-            font-family: 'Cormorant Garamond', serif;
+        .policy-intro__company {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
         }
         
-        .cookie-intro__text {
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #4a4a4a;
+        .policy-intro__meta {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
         }
         
-        .cookie-section {
-            background: #ffffff;
+        .policy-intro__meta a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .policy-section {
+            background: white;
             border-radius: 16px;
             padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 4rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
         }
         
-        .cookie-section:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        .policy-section:hover {
+            transform: translateY(-5px);
         }
         
-        .cookie-section__header {
+        .policy-section__header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
         
-        .cookie-section__icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
+        .policy-section__number {
+            background: var(--light-bg);
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
             flex-shrink: 0;
         }
         
-        .cookie-section__icon i {
-            font-size: 1.25rem;
-            color: #1a1a1a;
-        }
-        
-        /* Pastel icon backgrounds */
-        .cookie-section:nth-child(1) .cookie-section__icon {
-            background: linear-gradient(135deg, #E8D5E0 0%, #F2E6ED 100%);
-        }
-        .cookie-section:nth-child(2) .cookie-section__icon {
-            background: linear-gradient(135deg, #D5E0E8 0%, #E6EDF2 100%);
-        }
-        .cookie-section:nth-child(3) .cookie-section__icon {
-            background: linear-gradient(135deg, #E8E0D5 0%, #F2EDE6 100%);
-        }
-        .cookie-section:nth-child(4) .cookie-section__icon {
-            background: linear-gradient(135deg, #D5E8DE 0%, #E6F2EB 100%);
-        }
-        .cookie-section:nth-child(5) .cookie-section__icon {
-            background: linear-gradient(135deg, #E2D5E8 0%, #EDE6F2 100%);
-        }
-        .cookie-section:nth-child(6) .cookie-section__icon {
-            background: linear-gradient(135deg, #D5DEE8 0%, #E6EBF2 100%);
-        }
-        
-        .cookie-section__title {
-            font-family: 'Cormorant Garamond', serif;
+        .policy-section__title {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1a1a1a;
+            color: var(--text-dark);
+            margin: 0;
         }
         
-        .cookie-section__number {
-            font-family: 'Lato', sans-serif;
-            font-size: 0.8rem;
-            color: #888888;
-            font-weight: 400;
-            display: block;
-            margin-top: 0.25rem;
-        }
-        
-        .cookie-section__content {
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
+        .policy-section__content {
+            color: var(--text-light);
             line-height: 1.8;
-            color: #4a4a4a;
         }
         
-        .cookie-section__content p {
+        .policy-section__content p {
             margin-bottom: 1rem;
         }
         
-        .cookie-section__content ul {
+        .policy-section__content ul {
             margin: 1rem 0;
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .cookie-section__content li {
-            position: relative;
             padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
         }
         
-        .cookie-section__content li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.6em;
-            width: 6px;
-            height: 6px;
-            background: #1a1a1a;
-            border-radius: 50%;
+        .policy-section__content li {
+            margin-bottom: 0.5rem;
         }
         
-        .cookie-section__content strong {
-            color: #1a1a1a;
+        .policy-section__content strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .policy-section__content .note {
+            background: var(--light-bg);
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-top: 1rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .policy-section__content .note-title {
             font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: block;
         }
         
-        .cookie-section__content a {
-            color: #1a1a1a;
+        .policy-contact {
+            background: var(--text-dark);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .policy-contact__title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-contact__text {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-contact__link {
+            color: white;
             text-decoration: none;
-            border-bottom: 1px solid #cccccc;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             transition: border-color 0.3s ease;
         }
         
-        .cookie-section__content a:hover {
-            border-color: #1a1a1a;
+        .policy-contact__link:hover {
+            border-color: white;
         }
-        
-        /* Cookie Type Cards */
+
+        /* Cookie Specific Styles */
         .cookie-type {
-            background: #f9f9f9;
+            background: var(--light-bg);
             border-radius: 12px;
             padding: 1.5rem;
             margin-top: 1.5rem;
-            border-left: 3px solid #1a1a1a;
+            border-left: 3px solid var(--primary-color);
         }
         
         .cookie-type__title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
-            color: #1a1a1a;
+            color: var(--text-dark);
             margin-bottom: 0.75rem;
         }
-        
-        .cookie-type__text {
-            font-family: 'Lato', sans-serif;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #4a4a4a;
-        }
-        
-        /* Partner Cards */
+
         .partner-card {
-            background: #f9f9f9;
+            background: var(--light-bg);
             border-radius: 12px;
             padding: 1.5rem;
             margin-top: 1rem;
@@ -243,53 +232,44 @@
         .partner-card__icon {
             width: 40px;
             height: 40px;
-            background: #ffffff;
+            background: white;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-        
-        .partner-card__icon i {
-            font-size: 1.1rem;
-            color: #4a4a4a;
-        }
-        
-        .partner-card__content {
-            flex: 1;
+            color: var(--primary-color);
         }
         
         .partner-card__name {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 1rem;
-            font-weight: 700;
-            color: #1a1a1a;
+            font-weight: 600;
+            color: var(--text-dark);
             margin-bottom: 0.25rem;
         }
         
         .partner-card__desc {
-            font-family: 'Lato', sans-serif;
             font-size: 0.9rem;
-            color: #666666;
+            color: var(--text-light);
             line-height: 1.6;
         }
         
         .partner-card__link {
-            font-family: 'Lato', sans-serif;
             font-size: 0.85rem;
-            color: #1a1a1a;
+            color: var(--primary-color);
             text-decoration: none;
-            border-bottom: 1px solid #cccccc;
+            border-bottom: 1px solid transparent;
             transition: border-color 0.3s ease;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
         
         .partner-card__link:hover {
-            border-color: #1a1a1a;
+            border-color: var(--primary-color);
         }
-        
-        /* Browser Links */
+
         .browser-links {
             display: flex;
             flex-wrap: wrap;
@@ -302,100 +282,37 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.6rem 1rem;
-            background: #f5f5f5;
+            background: var(--light-bg);
             border-radius: 8px;
-            font-family: 'Lato', sans-serif;
             font-size: 0.9rem;
-            color: #1a1a1a;
+            color: var(--text-dark);
             text-decoration: none;
             transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 500;
         }
         
         .browser-link:hover {
-            background: #eeeeee;
+            background: #e0e0e0;
             transform: translateY(-1px);
         }
-        
-        .browser-link i {
-            font-size: 1rem;
-            color: #4a4a4a;
-        }
-        
-        /* Contact Section */
-        .cookie-contact {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            border-radius: 16px;
-            padding: 3rem;
-            margin-top: 3rem;
-            text-align: center;
-            color: #ffffff;
-        }
-        
-        .cookie-contact__title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .cookie-contact__text {
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-            color: #cccccc;
-            max-width: 500px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .cookie-contact__company {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cookie-contact__info a {
-            color: #ffffff;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            transition: border-color 0.3s ease;
-        }
-        
-        .cookie-contact__info a:hover {
-            border-color: #ffffff;
-        }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
-            .cookie-hero {
+            .policy-hero {
                 padding: 100px 0 60px;
             }
             
-            .cookie-intro,
-            .cookie-section {
-                padding: 1.75rem;
+            .policy-intro,
+            .policy-section {
+                padding: 1.5rem;
             }
             
-            .cookie-contact {
-                padding: 2rem;
-            }
-            
-            .cookie-section__header {
+            .policy-section__header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 0.75rem;
             }
-            
+
             .partner-card {
                 flex-direction: column;
-            }
-            
-            .browser-links {
-                flex-direction: column;
-            }
-            
-            .browser-link {
-                justify-content: center;
             }
         }
     </style>
@@ -406,88 +323,73 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="cookie-hero">
+        <section class="policy-hero">
             <div class="container">
-                <h1 class="cookie-hero__title">Cookie Policy</h1>
-                <p class="cookie-hero__subtitle">Understanding how we use cookies to improve your experience</p>
-                <span class="cookie-hero__date">Last Updated: November 29, 2025</span>
+                <h1 class="policy-hero__title">Cookie Policy</h1>
+                <p class="policy-hero__subtitle">Understanding how we use cookies to improve your experience</p>
+                <span class="policy-hero__badge">Last Updated: November 29, 2025</span>
             </div>
         </section>
 
         <!-- Cookie Content -->
-        <section class="cookie-content">
-            <div class="cookie-container">
+        <section class="policy-content">
+            <div class="policy-container">
                 
                 <!-- Introduction -->
-                <div class="cookie-intro">
-                    <p class="cookie-intro__company">Toronto Home Inspection Corp.</p>
-                    <div class="cookie-intro__text">
+                <div class="policy-intro">
+                    <p class="policy-intro__company">Toronto Home Inspection Corp.</p>
+                    <div class="policy-intro__text">
                         <p>At Toronto Home Inspection Corp., we believe in being clear and open about how we collect and use data related to you. This Cookie Policy explains how and why we use cookies, web beacons, pixels, and other tracking technologies (collectively "Cookies") when you visit our website.</p>
                     </div>
                 </div>
 
                 <!-- Section 1: What Are Cookies -->
-                <div class="cookie-section">
-                    <div class="cookie-section__header">
-                        <div class="cookie-section__icon">
-                            <i class="fas fa-cookie-bite"></i>
-                        </div>
-                        <div>
-                            <h2 class="cookie-section__title">What Are Cookies?</h2>
-                            <span class="cookie-section__number">Section 1</span>
-                        </div>
+                <div class="policy-section">
+                    <div class="policy-section__header">
+                        <div class="policy-section__number">01</div>
+                        <h2 class="policy-section__title">What Are Cookies?</h2>
                     </div>
-                    <div class="cookie-section__content">
+                    <div class="policy-section__content">
                         <p>Cookies are small text files that are placed on your computer, smartphone, or other device when you visit a website. They allow the website to recognize your device, store your preferences, and improve your overall experience.</p>
                     </div>
                 </div>
 
                 <!-- Section 2: Why We Use Cookies -->
-                <div class="cookie-section">
-                    <div class="cookie-section__header">
-                        <div class="cookie-section__icon">
-                            <i class="fas fa-question-circle"></i>
-                        </div>
-                        <div>
-                            <h2 class="cookie-section__title">Why We Use Cookies</h2>
-                            <span class="cookie-section__number">Section 2</span>
-                        </div>
+                <div class="policy-section">
+                    <div class="policy-section__header">
+                        <div class="policy-section__number">02</div>
+                        <h2 class="policy-section__title">Why We Use Cookies</h2>
                     </div>
-                    <div class="cookie-section__content">
+                    <div class="policy-section__content">
                         <p>We use cookies for several reasons, ranging from making the website function properly (technical reasons) to helping us analyze how our site is performing in search engines (SEO and analytics).</p>
                         <p><strong>We use the following categories of cookies:</strong></p>
                         
                         <div class="cookie-type">
                             <h3 class="cookie-type__title">A. Essential (Strictly Necessary) Cookies</h3>
-                            <p class="cookie-type__text">These cookies are vital for the website to function. They are set by our Web Hosting Partners and infrastructure providers. Without them, basic functions like page navigation, security, and load balancing would not work. <strong>You cannot opt out of these cookies if you wish to use our site.</strong></p>
+                            <p>These cookies are vital for the website to function. They are set by our Web Hosting Partners and infrastructure providers. Without them, basic functions like page navigation, security, and load balancing would not work. <strong>You cannot opt out of these cookies if you wish to use our site.</strong></p>
                         </div>
                         
                         <div class="cookie-type">
                             <h3 class="cookie-type__title">B. Analytics and SEO Cookies</h3>
-                            <p class="cookie-type__text">We use Search Engine Optimization (SEO) tools to help us understand how people find our business in Toronto. These cookies collect information anonymously, such as:</p>
+                            <p>We use Search Engine Optimization (SEO) tools to help us understand how people find our business in Toronto. These cookies collect information anonymously, such as:</p>
                             <ul style="margin-top: 0.75rem;">
                                 <li>Which pages you visit most often.</li>
                                 <li>How long you spend on the site.</li>
                                 <li>Whether you found us via Google, Bing, or a direct link.</li>
                                 <li>If you encounter any error messages.</li>
                             </ul>
-                            <p class="cookie-type__text" style="margin-top: 0.75rem;">We use this data to fix technical issues and optimize our content to better serve homeowners and buyers.</p>
+                            <p style="margin-top: 0.75rem;">We use this data to fix technical issues and optimize our content to better serve homeowners and buyers.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Section 3: Third-Party Service Providers -->
-                <div class="cookie-section">
-                    <div class="cookie-section__header">
-                        <div class="cookie-section__icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div>
-                            <h2 class="cookie-section__title">Third-Party Service Providers</h2>
-                            <span class="cookie-section__number">Section 3</span>
-                        </div>
+                <div class="policy-section">
+                    <div class="policy-section__header">
+                        <div class="policy-section__number">03</div>
+                        <h2 class="policy-section__title">Third-Party Service Providers</h2>
                     </div>
-                    <div class="cookie-section__content">
+                    <div class="policy-section__content">
                         <p>We trust specific third-party partners to help us analyze web traffic and host our services. These partners may place cookies on your device.</p>
                         <p><strong>Key Partners We Use Include:</strong></p>
                         
@@ -526,17 +428,12 @@
                 </div>
 
                 <!-- Section 4: How to Manage or Disable Cookies -->
-                <div class="cookie-section">
-                    <div class="cookie-section__header">
-                        <div class="cookie-section__icon">
-                            <i class="fas fa-sliders-h"></i>
-                        </div>
-                        <div>
-                            <h2 class="cookie-section__title">How to Manage or Disable Cookies</h2>
-                            <span class="cookie-section__number">Section 4</span>
-                        </div>
+                <div class="policy-section">
+                    <div class="policy-section__header">
+                        <div class="policy-section__number">04</div>
+                        <h2 class="policy-section__title">How to Manage or Disable Cookies</h2>
                     </div>
-                    <div class="cookie-section__content">
+                    <div class="policy-section__content">
                         <p><strong>You have the right to decide whether to accept or reject cookies.</strong></p>
                         <p><strong>Browser Controls:</strong> You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website, though your access to some functionality and areas of our website may be restricted.</p>
                         <p><strong>How to manage cookies in popular browsers:</strong></p>
@@ -559,29 +456,23 @@
                 </div>
 
                 <!-- Section 5: Changes to This Cookie Policy -->
-                <div class="cookie-section">
-                    <div class="cookie-section__header">
-                        <div class="cookie-section__icon">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <div>
-                            <h2 class="cookie-section__title">Changes to This Cookie Policy</h2>
-                            <span class="cookie-section__number">Section 5</span>
-                        </div>
+                <div class="policy-section">
+                    <div class="policy-section__header">
+                        <div class="policy-section__number">05</div>
+                        <h2 class="policy-section__title">Changes to This Cookie Policy</h2>
                     </div>
-                    <div class="cookie-section__content">
+                    <div class="policy-section__content">
                         <p>We may update this Cookie Policy from time to time in order to reflect, for example, changes to the cookies we use or for other operational, legal, or regulatory reasons.</p>
                         <p>Please revisit this Cookie Policy regularly to stay informed about our use of cookies and related technologies.</p>
                     </div>
                 </div>
 
                 <!-- Contact Section -->
-                <div class="cookie-contact">
-                    <h2 class="cookie-contact__title">Questions About Cookies?</h2>
-                    <p class="cookie-contact__text">If you have any questions about our use of cookies or other technologies, please contact us.</p>
-                    <p class="cookie-contact__company">Toronto Home Inspection Corp.</p>
-                    <div class="cookie-contact__info">
-                        <p>Email: <a href="mailto:mike@homeinspection.ca">mike@homeinspection.ca</a></p>
+                <div class="policy-contact">
+                    <h2 class="policy-contact__title">Questions About Cookies?</h2>
+                    <p class="policy-contact__text">If you have any questions about our use of cookies or other technologies, please contact us.</p>
+                    <div class="policy-contact__info">
+                        <p>Email: <a href="mailto:mike@homeinspection.ca" class="policy-contact__link">mike@homeinspection.ca</a></p>
                     </div>
                 </div>
 
