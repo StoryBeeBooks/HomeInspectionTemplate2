@@ -975,7 +975,13 @@ p {
     h2 { font-size: 2rem; }
     
     .top-info-bar__content {
-        display: none; /* Hide top bar details on mobile */
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.5rem 0;
+    }
+    
+    .top-info-bar__item {
+        font-size: 0.75rem;
     }
     
     .top-info-bar .container {
